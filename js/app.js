@@ -39,12 +39,14 @@ const switchTab = (id) => {
     document.getElementById("liked").style.display = "block";
     document.getElementById("posts").style.display = "none";
     document.getElementById("reported").style.display = "none";
+    document.getElementById('faqs').style.display = 'none'
 
     displayLikedPosts();
   } else {
     document.getElementById("reported").style.display = "block";
     document.getElementById("posts").style.display = "none";
     document.getElementById("liked").style.display = "none";
+    document.getElementById('faqs').style.display = 'none'
 
     displayReportedPosts();
   }
@@ -64,7 +66,7 @@ const createPost = (post) => {
                     target="_blank"
                     class="post__avatar"
                   >
-                    <img src="${image}" alt="User Picture" />
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="User Picture" />
                   </a>
                   <a href="#" class="post__user">phero</a>
                 </div>
@@ -152,8 +154,8 @@ const displayLikedPosts = () => {
     document.getElementById("liked").appendChild(div);
   });
 };
-
 const displayReportedPosts = () => {
+
   const reportedPosts = getReportedPosts();
   posts.forEach((post) => {
     const div = createPost(post);
